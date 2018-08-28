@@ -1,0 +1,7 @@
+.import/*
+_build/*
+*.import
+*.so
+*.dylib
+*.dll
+*.a
