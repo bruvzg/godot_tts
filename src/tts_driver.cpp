@@ -102,6 +102,7 @@ void register_nativescript_class(void *p_handle, const char *p_class_name, const
 		NULL
 	};
 	nativescript_api->godot_nativescript_register_class(p_handle, p_class_name, p_base_class_name, create_func, destroy_func);
+	nativescript_api->godot_nativescript_register_tool_class(p_handle, p_class_name, p_base_class_name, create_func, destroy_func);
 	if (nativescript_1_1_api && p_docs) {
 		godot_string docs = api->godot_string_chars_to_utf8(p_docs);
 		nativescript_1_1_api->godot_nativescript_set_class_documentation(p_handle, p_class_name, docs);
