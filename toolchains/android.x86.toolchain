@@ -1,0 +1,18 @@
+[binaries]
+c = '/usr/local/opt/android-ndk/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang'
+cpp = '/usr/local/opt/android-ndk/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++'
+ar = '/usr/local/opt/android-ndk/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar'
+strip = '/usr/local/opt/android-ndk/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-strip'
+pkgconfig = ''
+
+[host_machine]
+system = 'android'
+cpu_family = 'x86'
+cpu = 'i686'
+endian = 'little'
+
+[properties]
+c_args = ['--target=i686-none-linux-android21', '-march=i686', '-fPIC']
+cpp_args = ['--target=i686-none-linux-android21', '-march=i686', '-fPIC']
+c_link_args = ['--target=i686-none-linux-android21', '-march=i686']
+cpp_link_args = ['--target=i686-none-linux-android21', '-march=i686']

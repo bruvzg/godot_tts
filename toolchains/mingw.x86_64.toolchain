@@ -1,0 +1,16 @@
+[binaries]
+c = '/usr/local/bin/x86_64-w64-mingw32-gcc'
+cpp = '/usr/local/bin/x86_64-w64-mingw32-g++'
+ar = '/usr/local/bin/x86_64-w64-mingw32-ar'
+strip = '/usr/local/bin/x86_64-w64-mingw32-strip'
+pkgconfig = '/usr/local/bin/x86_64-w64-mingw32-pkg-config'
+
+[host_machine]
+system = 'windows'
+cpu_family = 'x86_64'
+cpu = 'amd64'
+endian = 'little'
+
+[properties]
+c_args = ['-D_WIN32_WINNT=0x0601']
+cpp_args = ['-D_WIN32_WINNT=0x0601']

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TTSDriver &mdash; libgdtts latest documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="libgdtl API" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> libgdtts
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/compiling_desktop.html">Compiling for Windows, macOS and Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/compiling_desktop.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/compiling_desktop.html#building-godot-cpp-static-library">Building <cite>godot-cpp</cite> static library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/compiling_desktop.html#building-libgdtts-static-library-and-built-in-dependencies">Building <cite>libgdtts</cite> static library and built-in dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/compiling_ios.html">Compiling for iOS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/compiling_ios.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/compiling_ios.html#building-godot-cpp-static-library">Building <cite>godot-cpp</cite> static library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/compiling_ios.html#building-libgdtts-static-library-and-built-in-dependencies">Building <cite>libgdtts</cite> static library and built-in dependencies</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">libgdtl API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TTSDriver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#brief-description">Brief Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">libgdtts</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">libgdtl API</a> &raquo;</li>
+        
+      <li>TTSDriver</li>
+    
+    
+
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ttsdriver">
+<span id="class-ttsdriver"></span><h1>TTSDriver<a class="headerlink" href="#ttsdriver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Category:</strong> Core</p>
+<div class="section" id="brief-description">
+<h2>Brief Description<a class="headerlink" href="#brief-description" title="Permalink to this headline">¶</a></h2>
+<p>Native TTS driver.</p>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 83%" />
+<col style="width: 7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>String</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-property-voice"><span class="std std-ref">voice</span></a></p></td>
+<td><p>“”</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-property-volume"><span class="std std-ref">volume</span></a></p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-property-rate"><span class="std std-ref">rate</span></a></p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="longtable colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-method-speak"><span class="std std-ref">speak</span></a> <strong>(</strong> String text, bool interrupt <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-method-stop"><span class="std std-ref">stop</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>bool</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-method-is-speaking"><span class="std std-ref">is_speaking</span></a> <strong>(</strong> <strong>)</strong> const</p></td>
+</tr>
+<tr class="row-even"><td><p>Array</p></td>
+<td><p><a class="reference internal" href="#class-ttsdriver-method-get-voices"><span class="std std-ref">get_voices</span></a> <strong>(</strong> <strong>)</strong> const</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-ttsdriver-property-voice">
+<li><p>String <strong>voice</strong></p></li>
+</ul>
+<table class="longtable colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p>“”</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Speech synthesizer’s current voice identifier. Not set by defualt. Should be one of the ids returend by <a class="reference internal" href="#class-ttsdriver-method-get-voices"><span class="std std-ref">get_voices</span></a>.</p>
+<hr class="docutils" />
+<ul class="simple" id="class-ttsdriver-property-volume">
+<li><p>int <strong>volume</strong></p></li>
+</ul>
+<table class="longtable colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p>“”</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_volume(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_volume()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Speech synthesizer’s volume. The granularity of the volume is engine dependent. Values may be truncated. Ranges from 0 to 100.</p>
+<hr class="docutils" />
+<ul class="simple" id="class-ttsdriver-property-rate">
+<li><p>int <strong>rate</strong></p></li>
+</ul>
+<table class="longtable colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p>“”</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_rate(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_rate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Speech synthesizer’s rendering rate adjustment. The granularity of the rate is engine dependent. Values may be truncated. Ranges from -100 to 100.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-ttsdriver-method-speak">
+<li><p>void <strong>speak</strong> <strong>(</strong> String text, bool interrupt <strong>)</strong></p></li>
+</ul>
+<p>Begins speaking synthesized text or adds text to the query. If <code class="docutils literal notranslate"><span class="pre">interrupt</span></code> is true, stops current synthesis in progress and clears query.</p>
+<hr class="docutils" />
+<ul class="simple" id="class-ttsdriver-method-stop">
+<li><p>void <strong>stop</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops synthesis in progress and clears query.</p>
+<hr class="docutils" />
+<ul class="simple" id="class-ttsdriver-method-is-speaking">
+<li><p>bool <strong>is_speaking</strong> <strong>(</strong> <strong>)</strong> const</p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the synthesizer is generating speech, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<hr class="docutils" />
+<ul class="simple" id="class-ttsdriver-method-get-voices">
+<li><p>Array <strong>get_voices</strong> <strong>(</strong> <strong>)</strong> const</p></li>
+</ul>
+<p>Returns an <code class="docutils literal notranslate"><span class="pre">Array</span></code> of voice information <code class="docutils literal notranslate"><span class="pre">Dictionaries</span></code>.</p>
+<table class="longtable colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 9%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>String</em></p></td>
+<td><p><em>name</em></p></td>
+<td><p>voice identifier</p></td>
+</tr>
+<tr class="row-even"><td><p><em>String</em></p></td>
+<td><p><em>language</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lang_variant</span></code> value. Where <cite>lang`</cite> part is 2 or 3-letter code based on the ISO-639 standard, in lowercase and <code class="docutils literal notranslate"><span class="pre">variant</span></code> part is engine dependent string describing country, region or/and dialect.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="libgdtl API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

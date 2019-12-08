@@ -1,0 +1,34 @@
+[general]
+
+singleton=false
+reloadable=false
+load_once=true
+symbol_prefix="gdtts_"
+
+[entry]
+
+Windows.32="res://addons/libgdtts/bin/windows.x86/libgdtts.dll"
+Windows.64="res://addons/libgdtts/bin/windows.x86_64/libgdtts.dll"
+
+OSX="res://addons/libgdtts/bin/darwin.x86_64/libgdtts.dylib"
+
+X11.x86_64="res://addons/libgdtts/bin/linux.x86_64/libgdtts.so"
+X11.x86="res://addons/libgdtts/bin/linux.x86/libgdtts.so"
+X11.armv7="res://addons/libgdtts/bin/linux.armv7/libgdtts.so"
+X11.arm64="res://addons/libgdtts/bin/linux.arm64/libgdtts.so"
+
+iOS="res://addons/libgdtts/bin/ios.fat/libgdtts.a"
+
+[dependencies]
+
+Windows.32=[  ]
+Windows.64=[  ]
+
+OSX=[  ]
+
+X11.x86_64=[  ]
+X11.x86=[  ]
+X11.armv7=[  ]
+X11.arm64=[  ]
+
+iOS=[  ]

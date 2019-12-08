@@ -5,3 +5,10 @@ _build/*
 *.dylib
 *.dll
 *.a
+_build_all.sh
+_build_config_all.sh
+_build_lipo_all.sh
+_build_strip_all.sh
+_build_*
+docs/source/_build
+*.pyc

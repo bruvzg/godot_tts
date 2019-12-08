@@ -1,64 +1,52 @@
-## Godot text-to-speech module (libgdtts)
+# Godot text-to-speech module (libgdtts)
 
-This GDNative module implements minimal native text-to-speech interface for Godot Engine on Windows, macOS and Linux.
+This GDNative module implements minimal native text-to-speech interface for Godot Engine on iOS, Linux, macOS and Windows.
 
-### Dependencies:
-#### Linux:
-- Godot 3.1 or Godot 3.0.6
-- GCC or Clang
+## Dependencies:
+
+- Godot 3.1+
+- C++14 compiler
 - Meson build system
-- Speech Dispatcher library and development files (libspeechd)
+- SCons build system
+- Speech Dispatcher library and development files (Linux only)
 
-#### macOS:
-- Godot 3.1 or Godot 3.0.6
-- Xcode
-- Meson build system
+## Compiling
 
-#### Windows:
-- Godot 3.1 or Godot 3.0.6
-- MinGW-W64 or Microsoft Visual C++
-- Meson build system
+### Build options
 
-### Binary downloads:
-Download [release](https://github.com/bruvzg/godot_tts/releases) archive and extract it into your project directory.
+Name | Description | Default value
+--- | --- | ---
+`godot-cpp-lib-name` | godot-cpp static library name (without `.a` or `.lib` extension) | `libgodot-cpp`
+`static-lib` | Build static library | `false`
+`static-runtime` | Link libgcc and libstdc++ statically | `false`
+`static-speech-dispatcher` | Link speech-dispatcher statically | `false`
+`builtin-runtime` | Use the built-in libraries | `false`
 
-### Compiling:
-1. Go to the root directory of the source code.
-2. Run the build system:
-```sh
-meson [build_dir] --buildtype=release
-ninja -C [build_dir]
-```
+### Building `godot-cpp` static library
 
-### Loading module:
-```gdscript
-	const TTSDriver = preload("res://TTSDriver.gdns")
-	...
-	var tts = TTSDriver.new()
-```
+See [Compiling the cpp bindings library](https://github.com/GodotNativeTools/godot-cpp/blob/master/README.md#compiling-the-cpp-bindings-library)
 
-### Module API:
-- `void tts.speak(String text, bool interrupt)`, Begins speaking synthesized text.
-- `void tts.stop()`, Stops synthesis in progress.
-- `bool tts.is_speaking()`, Returns `true` if the synthesizer is generating speech, `false` otherwise.
-- `Array tts.get_voices()`, Returns an `Array` of voice information `Dictionaries`.
-Where `String name` is voice identifier and `String language` is language code in `lang_variant` format.
-`lang` part is 2 or 3-letter code based on the ISO-639 standard, in lowercase.
-`variant` part is engine dependent string describing country, region or/and dialect.
-- `void tts.set_voice(String name)`, Sets the speech synthesizer’s current voice.
-- `int tts.get_volume()`/`void tts.set_volume(int volume)`, The speech synthesizer’s volume.
-The granularity of the volume is engine dependent.
-Values may be truncated. Ranges from 0 to 100.
-- `int tts.get_rate`/`void tts.set_rate(int rate)`, The speech synthesizer’s rendering rate adjustment.
-The granularity of the rate is engine dependent.
-Values may be truncated. Ranges from -100 to 100.
+### Building `libgdtts` module
 
-### License:
+See [Compiling for Windows, macOS and Linux](https://bruvzg.github.io/godot_tts/docs/html/development/compiling_desktop.html#doc-compile-desktop) and [Compiling for iOS](https://bruvzg.github.io/godot_tts/docs/html/development/compiling_ios.html#doc-compile-ios) for build instructions.
+
+
+## Documentation
+
+[Documentation](https://bruvzg.github.io/godot_tts/docs/html/index.html)
+
+[Class reference](https://bruvzg.github.io/godot_tts/docs/html/classes/index.html)
+
+## License
+
 - The source code for the **libgdtts** module is released under unlicense.
 For more information, see http://unlicense.org/ or the accompanying UNLICENSE file.
+
 - **Godot** and **GodotNativeTools** are licensed under MIT license.
 For more information, see https://github.com/godotengine/godot/blob/master/LICENSE.txt.
+
 - **Speech Dispatcher** C API library is licensed under GNU Lesser General Public License 2.1 or later.
 For more information, see https://github.com/brailcom/speechd/blob/master/src/api/c/libspeechd.c
+
 - **Speech Dispatcher** backend is licensed under GNU General Public License.
 For more information, see (https://github.com/brailcom/speechd/blob/master/COPYING.

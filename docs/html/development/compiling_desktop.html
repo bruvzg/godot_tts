@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiling for Windows, macOS and Linux &mdash; libgdtts latest documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compiling for iOS" href="compiling_ios.html" />
+    <link rel="prev" title="libgdtl documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> libgdtts
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Development</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compiling for Windows, macOS and Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-godot-cpp-static-library">Building <cite>godot-cpp</cite> static library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-libgdtts-static-library-and-built-in-dependencies">Building <cite>libgdtts</cite> static library and built-in dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_ios.html">Compiling for iOS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiling_ios.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_ios.html#building-godot-cpp-static-library">Building <cite>godot-cpp</cite> static library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiling_ios.html#building-libgdtts-static-library-and-built-in-dependencies">Building <cite>libgdtts</cite> static library and built-in dependencies</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Class reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">libgdtl API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../classes/class_ttsdriver.html">TTSDriver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../classes/class_ttsdriver.html#brief-description">Brief Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/class_ttsdriver.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/class_ttsdriver.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/class_ttsdriver.html#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/class_ttsdriver.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">libgdtts</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Compiling for Windows, macOS and Linux</li>
+    
+    
+
+
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compiling-for-windows-macos-and-linux">
+<span id="doc-compile-desktop"></span><h1>Compiling for Windows, macOS and Linux<a class="headerlink" href="#compiling-for-windows-macos-and-linux" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Meson build system</p></li>
+<li><p>SCons build system</p></li>
+</ul>
+</div>
+<div class="section" id="building-godot-cpp-static-library">
+<h2>Building <cite>godot-cpp</cite> static library<a class="headerlink" href="#building-godot-cpp-static-library" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Open a Terminal and navigate to the <cite>godot-cpp</cite> subdirectory.</p></li>
+<li><p>Compile <cite>godot-cpp</cite> static libraries for required platforms (<cite>{os}</cite> - <cite>windows</cite>, <cite>osx</cite> or <cite>linux</cite>), by typing:</p></li>
+</ol>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="o">$</span> <span class="n">scons</span> <span class="n">platform</span><span class="o">=</span><span class="p">{</span><span class="n">os</span><span class="p">}</span> <span class="n">target</span><span class="o">=</span><span class="n">release</span> <span class="n">bits</span><span class="o">=</span><span class="mi">64</span> <span class="n">generate_bindings</span><span class="o">=</span><span class="n">yes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-libgdtts-static-library-and-built-in-dependencies">
+<h2>Building <cite>libgdtts</cite> static library and built-in dependencies<a class="headerlink" href="#building-libgdtts-static-library-and-built-in-dependencies" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to the root directory of the source.</p></li>
+<li><p>For MinGW cross-build edit toolchain path in the Meson cross compile files (<cite>toolchains/ming.{arch}.toolchain</cite>).</p></li>
+<li><p>Configure <cite>libgdtts</cite> static libraries, by typing:</p></li>
+</ol>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="o">$</span> <span class="n">meson</span> <span class="o">./</span><span class="n">_</span><span class="p">{</span><span class="n">os_build_dir</span><span class="p">}</span> <span class="o">-</span><span class="n">Dgodot</span><span class="o">-</span><span class="n">cpp</span><span class="o">-</span><span class="n">lib</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">libgodot</span><span class="o">-</span><span class="n">cpp</span><span class="o">.</span><span class="p">{</span><span class="n">os</span><span class="p">}</span><span class="o">.</span><span class="n">release</span><span class="o">.</span><span class="p">{</span><span class="n">bits</span><span class="p">}</span> <span class="o">--</span><span class="n">buildtype</span><span class="o">=</span><span class="n">release</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Compile <cite>libgdtts</cite> static libraries, by typing:</p></li>
+</ol>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="o">$</span> <span class="n">ninja</span> <span class="o">-</span><span class="n">C</span> <span class="o">./</span><span class="p">{</span><span class="n">os_build_dir</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Copy <cite>.so</cite>`.dll``.dylib` files to the <cite>libgdtts/bin/{os}.{arch}/</cite>.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="compiling_ios.html" class="btn btn-neutral float-right" title="Compiling for iOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="libgdtl documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

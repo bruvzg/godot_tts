@@ -6,7 +6,7 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=3
+config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
@@ -15,13 +15,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="libgdtts test"
+config/name="libgdtts_test"
 run/main_scene="res://UI.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=800
+
+[editor_plugins]
+
+enabled=PoolStringArray( "libgdtts" )
 
 [rendering]
 

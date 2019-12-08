@@ -1,0 +1,7 @@
+option('godot-cpp-lib-name', type : 'string', value : 'libgodot-cpp', description : 'GDNative C++ bindings static library name')
+option('static-runtime', type : 'boolean', value : false, description : 'Link libgcc and libstdc++ statically')
+option('static-speech-dispatcher', type : 'boolean', value : false, description : 'Link speech-dispatcher statically')
+option('use-ubsan', type : 'boolean', value : false, description : 'Use LLVM/GCC compiler undefined behavior sanitizer')
+option('use-asan', type : 'boolean', value : false, description : 'Use LLVM/GCC compiler address sanitizer')
+option('use-lsan', type : 'boolean', value : false, description : 'Use LLVM/GCC compiler leak sanitizer')
+option('use-tsan', type : 'boolean', value : false, description : 'Use LLVM/GCC compiler thread sanitizer')
