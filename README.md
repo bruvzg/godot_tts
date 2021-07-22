@@ -4,18 +4,18 @@ This GDNative module implements minimal native text-to-speech interface for Godo
 
 ### Dependencies:
 #### Linux:
-- Godot 3.1 or Godot 3.0.6
+- Godot 3.x (3.0.6+)
 - GCC or Clang
 - Meson build system
 - Speech Dispatcher library and development files (libspeechd)
 
 #### macOS:
-- Godot 3.1 or Godot 3.0.6
+- Godot 3.x (3.0.6+)
 - Xcode
 - Meson build system
 
 #### Windows:
-- Godot 3.1 or Godot 3.0.6
+- Godot 3.x (3.0.6+)
 - MinGW-W64 or Microsoft Visual C++
 - Meson build system
 
