@@ -9,7 +9,8 @@ symbol_prefix="godot_"
 Windows.32="res://libgdtts/libgdtts.windows.x86.dll"
 Windows.64="res://libgdtts/libgdtts.windows.x86_64.dll"
 
-OSX="res://libgdtts/libgdtts.darwin.x86_64.dylib"
+OSX.x86_64="res://libgdtts/libgdtts.darwin.x86_64.dylib"
+OSX.arm64="res://libgdtts/libgdtts.darwin.aarch64.dylib"
 
 X11.x86="res://libgdtts/libgdtts.linux.x86.so"
 X11.x86_64="res://libgdtts/libgdtts.linux.x86_64.so"
