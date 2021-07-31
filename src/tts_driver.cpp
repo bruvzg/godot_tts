@@ -72,6 +72,22 @@ Variant GDCALLINGCONV gdn_tts_get_volume(godot_object *p_instance, void *p_metho
 	return 0;
 };
 
+//void set_pitch(float p_pitch);
+Variant GDCALLINGCONV gdn_tts_set_pitch(godot_object *p_instance, void *p_method_data, void *p_user_data, int p_num_args, Variant **p_args) {
+	if ((p_num_args >= 1) && TTSDriver::get_singleton()) {
+		TTSDriver::get_singleton()->set_pitch(*p_args[0]);
+	}
+	return Variant();
+};
+
+//float get_pitch();
+Variant GDCALLINGCONV gdn_tts_get_pitch(godot_object *p_instance, void *p_method_data, void *p_user_data, int p_num_args, Variant **p_args) {
+	if (TTSDriver::get_singleton()) {
+		return TTSDriver::get_singleton()->get_pitch();
+	}
+	return 0;
+};
+
 //void set_rate(int p_rate);
 Variant GDCALLINGCONV gdn_tts_set_rate(godot_object *p_instance, void *p_method_data, void *p_user_data, int p_num_args, Variant **p_args) {
 	if ((p_num_args >= 1) && TTSDriver::get_singleton()) {
@@ -184,6 +200,16 @@ void TTSDriver::register_methods(void *p_handle) {
 	};
 	register_nativescript_method(p_handle, "TTSDriver", "set_volume", reinterpret_cast<gdn_method>(&gdn_tts_set_volume), 1, gdn_tts_set_volume_args, "Sets the speech synthesizer’s volume");
 	register_nativescript_method(p_handle, "TTSDriver", "get_volume", reinterpret_cast<gdn_method>(&gdn_tts_get_volume), 0, NULL, "Returns the speech synthesizer’s volume");
+	godot_method_arg gdn_tts_set_pitch_args[] = {
+		{
+			api->godot_string_chars_to_utf8("pitch"),
+			GODOT_VARIANT_TYPE_REAL,
+			GODOT_PROPERTY_HINT_NONE,
+			api->godot_string_chars_to_utf8("")
+		}
+	};
+	register_nativescript_method(p_handle, "TTSDriver", "set_pitch", reinterpret_cast<gdn_method>(&gdn_tts_set_pitch), 1, gdn_tts_set_pitch_args, "Sets the speech synthesizer’s pitch");
+	register_nativescript_method(p_handle, "TTSDriver", "get_pitch", reinterpret_cast<gdn_method>(&gdn_tts_get_pitch), 0, NULL, "Returns the speech synthesizer’s pitch");
 	godot_method_arg gdn_tts_set_rate_args[] = {
 		{
 			api->godot_string_chars_to_utf8("rate"),

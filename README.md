@@ -49,6 +49,9 @@ Where `String name` is voice identifier and `String language` is language code i
 - `int tts.get_volume()`/`void tts.set_volume(int volume)`, The speech synthesizer’s volume.
 The granularity of the volume is engine dependent.
 Values may be truncated. Ranges from 0 to 100.
+- `float tts.get_pitch()`/`void tts.set_pitch(float pitch)`, The speech synthesizer’s pitch.
+The granularity of the pitch is engine dependent.
+Values may be truncated. Ranges from -10 to 10.
 - `int tts.get_rate`/`void tts.set_rate(int rate)`, The speech synthesizer’s rendering rate adjustment.
 The granularity of the rate is engine dependent.
 Values may be truncated. Ranges from -100 to 100.

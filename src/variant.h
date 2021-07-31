@@ -19,6 +19,7 @@ public:
 	Variant(const Variant& p_var);
 	Variant(bool p_bool);
 	Variant(int p_int);
+	Variant(float p_int);
 	Variant(const String& p_string);
 	Variant(const Dictionary& p_dict);
 	Variant(const Array& p_array);
@@ -26,7 +27,8 @@ public:
 	Variant &operator=(const Variant& p_var);
 
 	operator bool() const;
-	operator signed int() const;
+	operator int() const;
+	operator float() const;
 	operator String() const;
 	operator Dictionary() const;
 	operator Array() const;

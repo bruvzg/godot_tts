@@ -32,6 +32,9 @@ public:
 	void set_volume(int p_volume);
 	int get_volume();
 
+	void set_pitch(float p_pitch);
+	float get_pitch();
+
 	void set_rate(int p_rate);
 	int get_rate();
 
