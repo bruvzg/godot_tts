@@ -36,6 +36,8 @@ public:
 	String operator+(const String &p_string) const;
 	bool operator==(const String &p_string) const;
 
+	static String itos(int64_t p_num, godot_int p_base);
+
 	~String();
 };
 

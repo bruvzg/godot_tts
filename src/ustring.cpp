@@ -38,6 +38,11 @@ CharString String::utf8() const {
 	return *reinterpret_cast<CharString *>(&ret);
 };
 
+String String::itos(int64_t p_num, godot_int p_base) {
+	godot_string ret = api->godot_string_num_int64(p_num, p_base);
+	return *reinterpret_cast<String *>(&ret);
+}
+
 String &String::operator=(const String &p_string) {
 	api->godot_string_destroy(&gdn);
 	api->godot_string_new_copy(&gdn, &p_string.gdn);

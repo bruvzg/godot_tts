@@ -44,6 +44,7 @@ elif host_machine.system() == 'linux'
         '-std=c++14',
         '-fPIC',
         '-Wwrite-strings',
+        '-Wno-attributes'
     ]
     link_args += [
         '-static-libgcc',

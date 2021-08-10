@@ -1,12 +1,16 @@
 [binaries]
-c = '/usr/bin/i686-w64-mingw32-gcc'
-cpp = '/usr/bin/i686-w64-mingw32-g++'
-ar = '/usr/bin/i686-w64-mingw32-ar'
-strip = '/usr/bin/i686-w64-mingw32-strip'
-pkgconfig = '/usr/bin/i686-w64-mingw32-pkg-config'
+c = '/opt/homebrew/bin/i686-w64-mingw32-gcc'
+cpp = '/opt/homebrew/bin/i686-w64-mingw32-g++'
+ar = '/opt/homebrew/bin/i686-w64-mingw32-ar'
+strip = '/opt/homebrew/bin/i686-w64-mingw32-strip'
+pkgconfig = '/opt/homebrew/bin/i686-w64-mingw32-pkg-config'
 
 [host_machine]
 system = 'windows'
 cpu_family = 'x86'
 cpu = 'i686'
 endian = 'little'
+
+[built-in options]
+c_args = ['-D_WIN32_WINNT=0x0601']
+cpp_args = ['-D_WIN32_WINNT=0x0601']

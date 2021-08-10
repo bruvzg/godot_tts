@@ -33,6 +33,9 @@ public:
 	virtual void set_volume(int p_volume) = 0;
 	virtual int get_volume() = 0;
 
+	virtual void set_pitch(float p_pitch) = 0;
+	virtual float get_pitch() = 0;
+
 	virtual void set_rate(int p_rate) = 0;
 	virtual int get_rate() = 0;
 

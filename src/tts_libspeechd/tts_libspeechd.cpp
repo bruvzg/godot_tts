@@ -104,9 +104,26 @@ int TTSDriverSPD::get_volume() {
 	}
 };
 
+void TTSDriverSPD::set_pitch(float p_pitch) {
+	if (synth) {
+		spd_set_voice_pitch(synth, p_pitch);
+	} else {
+		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
+	}
+};
+
+float TTSDriverSPD::get_pitch() {
+	if (synth) {
+		return spd_get_voice_pitch(synth) / 10.0f;
+	} else {
+		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
+		return 0;
+	}
+};
+
 void TTSDriverSPD::set_rate(int p_rate) {
 	if (synth) {
-		spd_set_voice_rate(synth, p_rate);
+		spd_set_voice_rate(synth, p_rate * 10.0f);
 	} else {
 		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
 	}

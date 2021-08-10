@@ -11,6 +11,7 @@
 TTSDriverSAPI::TTSDriverSAPI() {
 	co_initialized = false;
 	synth = NULL;
+	pitch = 0;
 };
 
 bool TTSDriverSAPI::initialize() {
@@ -38,10 +39,19 @@ bool TTSDriverSAPI::initialize() {
 
 void TTSDriverSAPI::speak(const String &p_text, bool p_interrupt) {
 	if (synth) {
-		if (p_interrupt) {
-			synth->Speak(p_text.c_str(), SPF_IS_NOT_XML | SPF_ASYNC | SPF_PURGEBEFORESPEAK, NULL);
+		String text;
+		DWORD flags = SPF_ASYNC;
+		if (pitch == 0) {
+			text = p_text;
+			flags |= SPF_IS_NOT_XML;
 		} else {
-			synth->Speak(p_text.c_str(), SPF_IS_NOT_XML | SPF_ASYNC, NULL);
+			text = String("<pitch absmiddle=\"") + String::itos(pitch, 10) + String("\">") + p_text + String("</pitch>");
+			flags |= SPF_IS_XML;
+		}
+		if (p_interrupt) {
+			synth->Speak(text.c_str(), flags | SPF_PURGEBEFORESPEAK, NULL);
+		} else {
+			synth->Speak(text.c_str(), flags, NULL);
 		}
 	} else {
 		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
@@ -152,6 +162,23 @@ int TTSDriverSAPI::get_volume() {
 		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
 	}
 	return volume;
+};
+
+void TTSDriverSAPI::set_pitch(float p_pitch) {
+	if (synth) {
+		pitch = p_pitch;
+	} else {
+		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
+	}
+};
+
+float TTSDriverSAPI::get_pitch() {
+	if (synth) {
+		return pitch;
+	} else {
+		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
+		return 0;
+	}
 };
 
 void TTSDriverSAPI::set_rate(int p_rate) {

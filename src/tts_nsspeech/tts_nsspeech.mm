@@ -29,6 +29,7 @@
 
 TTSDriverNSSpeech::TTSDriverNSSpeech() {
 	synth = NULL;
+	pitch = 0;
 	delegate = NULL;
 };
 
@@ -90,7 +91,13 @@ Array TTSDriverNSSpeech::get_voices() {
 
 void TTSDriverNSSpeech::set_voice(const String &p_voice) {
 	if (synth) {
+		[synth setObject:nil forProperty:NSSpeechResetProperty error:nil];
+
 		[synth setVoice:[NSString stringWithUTF8String:p_voice.utf8().get_data()]];
+		float base_pitch = [[synth objectForProperty:NSSpeechPitchBaseProperty error:nil] floatValue];
+		int val = base_pitch + (base_pitch * pitch / 10.0f);
+
+		[synth setObject:[NSNumber numberWithInt:val] forProperty:NSSpeechPitchBaseProperty error:nullptr];
 	} else {
 		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
 	}
@@ -116,6 +123,30 @@ void TTSDriverNSSpeech::set_volume(int p_volume) {
 int TTSDriverNSSpeech::get_volume() {
 	if (synth) {
 		return [synth volume] * 100.0;
+	} else {
+		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
+		return 0;
+	}
+};
+
+void TTSDriverNSSpeech::set_pitch(float p_pitch) {
+	if (synth) {
+		pitch = p_pitch;
+
+		// Get base pitch.
+		[synth setObject:nil forProperty:NSSpeechResetProperty error:nil];
+		float base_pitch = [[synth objectForProperty:NSSpeechPitchBaseProperty error:nil] floatValue];
+		int val = base_pitch + (base_pitch * pitch / 10.0f);
+
+		[synth setObject:[NSNumber numberWithInt:val] forProperty:NSSpeechPitchBaseProperty error:nullptr];
+	} else {
+		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
+	}
+};
+
+float TTSDriverNSSpeech::get_pitch() {
+	if (synth) {
+		return pitch;
 	} else {
 		DEBUG_PRINT_WARNING("TTS driver is not initialized!");
 		return 0;
