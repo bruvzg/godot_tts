@@ -3,7 +3,7 @@ project(
     'cpp',
     meson_version : '>= 0.45'
 )
-library_version = '0.1.0'
+library_version = '0.2.0'
 
 prefix = ''
 cpp_args = []

@@ -1,0 +1,18 @@
+[binaries]
+c = 'arm-linux-gnueabihf-gcc'
+cpp = 'arm-linux-gnueabihf-g++'
+ar = 'arm-linux-gnueabihf-ar'
+strip = 'arm-linux-gnueabihf-strip'
+pkgconfig = 'arm-linux-gnueabihf-pkg-config'
+
+[host_machine]
+system = 'linux'
+cpu_family = 'arm'
+cpu = 'armv7'
+endian = 'little'
+
+[built-in options]
+c_args = ['-march=armv7', '-fPIC']
+cpp_args = ['-march=armv7', '-fPIC']
+c_link_args = ['-march=armv7']
+cpp_link_args = ['-march=armv7']
