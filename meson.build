@@ -1,65 +1,74 @@
 project(
-    'libgdtts',
+    'libgdtts2',
     'cpp',
     meson_version : '>= 0.45'
 )
-library_version = '0.2.0'
+library_version = '2.0.0'
+
+godot_cpp = meson.get_compiler('cpp').find_library(get_option('godot-cpp-lib-name'), dirs: join_paths(meson.current_source_dir(), 'godot-cpp', 'bin'))
 
 prefix = ''
 cpp_args = []
+c_args = []
+objcpp_args = []
 link_args = []
-dependencies = []
+dependencies = [
+    godot_cpp
+]
 sources = [
-    'src/array.cpp',
-    'src/dictionary.cpp',
-    'src/gdnative.cpp',
-    'src/tts_driver.cpp',
-    'src/ustring.cpp',
-    'src/variant.cpp'
+    'src/register_types.cpp',
+    'src/tts_common.cpp'
 ]
 
-if host_machine.system() == 'darwin'
+if host_machine.system() == 'darwin' or host_machine.system() == 'ios'
     add_languages('objcpp')
     sources += [
-        'src/tts_nsspeech/tts_nsspeech.mm'
+        'src/tts_avspeech.mm'
     ]
     cpp_args += [
-        '-DOS_MACOS',
-        '-std=c++14',
-        '-Wwrite-strings',
+        '-std=c++20'
+    ]
+    c_args += [
+        '-std=c++17',
+    ]
+    objcpp_args += [
+        '-std=c++17',
     ]
     link_args += [
         '-framework', 'Foundation',
-        '-framework', 'Appkit',
-        '-framework', 'Cocoa',
+        '-framework', 'AVFAudio',
         '-Wl,-undefined,dynamic_lookup',
     ]
 elif host_machine.system() == 'linux'
     dependencies += dependency('speech-dispatcher', required: true)
     sources += [
-        'src/tts_libspeechd/tts_libspeechd.cpp'
+        'src/tts_libspeechd.cpp'
     ]
     cpp_args += [
-        '-DOS_LINUX',
-        '-std=c++14',
-        '-fPIC',
-        '-Wwrite-strings',
-        '-Wno-attributes'
+        '-std=c++17',
+        '-fPIC'
+    ]
+    c_args += [
+        '-std=c++17',
+        '-fPIC'
     ]
     link_args += [
+        '-ldl',
         '-static-libgcc',
         '-static-libstdc++',
         '-Wl,--no-undefined',
-        '-Wl,-R,\'\$ORIGIN\'',
+        '-Wl,-R,\'\$ORIGIN\''
     ]
 elif host_machine.system() == 'windows'
     sources += [
-        'src/tts_sapi/tts_sapi.cpp'
+        'src/tts_sapi.cpp'
     ]
     if meson.get_compiler('cpp').get_id() == 'msvc'
         prefix = 'lib'
         cpp_args += [
-            '/TP'
+            '/MT',
+            '/TP',
+            '/EHsc'
         ]
         link_args += [
             '/WX',
@@ -70,16 +79,17 @@ elif host_machine.system() == 'windows'
         ]
     else
         cpp_args += [
-            '-DOS_WINDOWS',
-            '-std=c++14',
-            '-Wwrite-strings',
+            '-std=c++17'
+        ]
+        c_args += [
+            '-std=c++17',
         ]
         link_args += [
             '-lkernel32',
             '-lole32',
             '-loleaut32',
             '-lsapi',
-            '--static',
+            '-static',
             '-static-libgcc',
             '-static-libstdc++',
             '-Wl,--no-undefined',
@@ -89,11 +99,26 @@ else
     error('Text-to-speech is not implemented on this platform!')
 endif
 
-shared_library(
-    prefix + 'gdtts' + '.' + target_machine.system() + '.' + target_machine.cpu_family(),
-    sources,
-    dependencies : dependencies,
-    link_args : link_args,
-    cpp_args : cpp_args,
-    include_directories : include_directories('src', 'godot_headers')
-)
+if host_machine.system() == 'ios'
+    static_library(
+        prefix + 'gdtts2' + '_' + target_machine.system() + '_' + target_machine.cpu_family(),
+        sources,
+        dependencies : dependencies,
+        link_args : link_args,
+        cpp_args : cpp_args,
+        c_args : c_args,
+        objcpp_args : objcpp_args,
+        include_directories : include_directories('src', 'godot-cpp/godot-headers', 'godot-cpp/gen/include', 'godot-cpp/include')
+    )
+else
+    shared_library(
+        prefix + 'gdtts2' + '_' + target_machine.system() + '_' + target_machine.cpu_family(),
+        sources,
+        dependencies : dependencies,
+        link_args : link_args,
+        cpp_args : cpp_args,
+        c_args : c_args,
+        objcpp_args : objcpp_args,
+        include_directories : include_directories('src', 'godot-cpp/godot-headers', 'godot-cpp/gen/include', 'godot-cpp/include')
+    )
+endif

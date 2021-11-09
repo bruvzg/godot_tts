@@ -1,23 +1,20 @@
-meson ./_macos_arm64  --buildtype=release --cross-file ./.toolchains/macos.arm64.toolchain
-ninja -C ./_macos_arm64
+meson ./_macos_universal  --buildtype=debug -Dgodot-cpp-lib-name=libgodot-cpp.osx.debug.universal --cross-file ./.toolchains/macos.universal.toolchain
+ninja -C ./_macos_universal
 
-meson ./_macos_x86_64  --buildtype=release --cross-file ./.toolchains/macos.x86_64.toolchain
-ninja -C ./_macos_x86_64
-
-meson ./_windows_x86_64  --buildtype=release --cross-file ./.toolchains/mingw.x86_64.toolchain
+meson ./_windows_x86_64  --buildtype=debug -Dgodot-cpp-lib-name=libgodot-cpp.windows.debug.64 --cross-file ./.toolchains/mingw.x86_64.toolchain
 ninja -C ./_windows_x86_64
 
-meson ./_windows_x86  --buildtype=release --cross-file ./.toolchains/mingw.x86.toolchain
-ninja -C ./_windows_x86
+// meson ./_windows_x86  --buildtype=release --cross-file ./.toolchains/mingw.x86.toolchain
+// ninja -C ./_windows_x86
 
-meson ./_linux_arm64  --buildtype=release --cross-file ./.toolchains/linux.arm64.toolchain
-ninja -C ./_linux_arm64
+// meson ./_linux_arm64  --buildtype=release --cross-file ./.toolchains/linux.arm64.toolchain
+// ninja -C ./_linux_arm64
 
-meson ./_linux_armv7  --buildtype=release --cross-file ./.toolchains/linux.armv7.toolchain
-ninja -C ./_linux_armv7
+// meson ./_linux_armv7  --buildtype=release --cross-file ./.toolchains/linux.armv7.toolchain
+// ninja -C ./_linux_armv7
 
-meson ./_linux_x86  --buildtype=release --cross-file ./.toolchains/linux.x86.toolchain
-ninja -C ./_linux_x86
+// meson ./_linux_x86  --buildtype=release --cross-file ./.toolchains/linux.x86.toolchain
+// ninja -C ./_linux_x86
 
-meson ./_linux_x86_64  --buildtype=release --cross-file ./.toolchains/linux.x86_64.toolchain
-ninja -C ./_linux_x86_64
+// meson ./_linux_x86_64  --buildtype=release --cross-file ./.toolchains/linux.x86_64.toolchain
+// ninja -C ./_linux_x86_64
