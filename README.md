@@ -1,3 +1,8 @@
+# ⚠️ This module is not actively maintained ⚠️
+## Godot 4.0 have native TTS implementation for all platforms (Android, iOS, Linux, macOS, Windows and Web), see https://github.com/godotengine/godot/pull/56192 (backport for 3.x - https://github.com/godotengine/godot/pull/61316)
+
+---
+
 ## Godot text-to-speech module (libgdtts)
 
 This GDNative module implements minimal native text-to-speech interface for Godot Engine on Windows, macOS and Linux.
